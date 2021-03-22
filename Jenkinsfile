@@ -2,7 +2,7 @@ node ("jenkins-java"){
     stage ("Checkout pipelines") {
     checkout scm
     checkout (scm: [$class: 'GitSCM',
-                    branches: [[name: '*/master']],
+                    branches: [[name: '*/main']],
                     extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'help_files']],
                     userRemoteConfigs: [[credentialsId: 'Github', url: 'https://github.com/Anumrati/cicd.git']]])
     }
